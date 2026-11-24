@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% if pageTitle %}{{ pageTitle }} – {% endif %}Plain Atlas</title>
+<meta name="description" content="Plain-language analysis of the politics, security, and economics of every country.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Instrument+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+{{ content | safe }}
+<footer class="wrap">
+  <p>Plain Atlas offers analysis, not travel, legal, or security advice. Country names and map borders are simplified and imply no political position.</p>
+</footer>
+</body>
+</html>

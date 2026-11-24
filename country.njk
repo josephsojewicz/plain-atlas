@@ -1,0 +1,24 @@
+---
+layout: layout.njk
+pagination:
+  data: countryList
+  size: 1
+  alias: country
+permalink: "/countries/{{ country.slug }}/"
+eleventyComputed:
+  pageTitle: "{{ country.name }}"
+---
+{% set entry = collections.written | entryFor(country.slug) %}
+<div class="wrap">
+  <p class="back"><a href="/">← World map</a></p>
+  <h1>{{ country.name }}</h1>
+  {% if entry | hasText %}
+    <p class="meta">
+      {% if entry.data.updated %}Updated {{ entry.data.updated }}.{% endif %}
+      {% if entry.data.confidence %} Confidence: {{ entry.data.confidence }}.{% endif %}
+    </p>
+    <article class="prose">{{ entry | renderText | safe }}</article>
+  {% else %}
+    <div class="empty">No analysis has been published on {{ country.name }} yet.</div>
+  {% endif %}
+</div>

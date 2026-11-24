@@ -1,0 +1,27 @@
+---
+layout: layout.njk
+---
+<header class="wrap">
+  <h1>Plain Atlas</h1>
+  <p class="lead">Plain-language analysis of the politics, security, and economics of every country. Select a country to open its page.</p>
+  <div class="tools">
+    <input id="q" list="names" placeholder="Search for a country" aria-label="Search for a country" autocomplete="off">
+    <datalist id="names">{% for c in countryList %}<option value="{{ c.name }}">{% endfor %}</datalist>
+    <span class="legend"><i class="sw live"></i> Analysis published <i class="sw"></i> Coming</span>
+  </div>
+</header>
+<div class="wrap"><div id="mapwrap"><div id="map" aria-label="World map. Select a country."></div></div></div>
+<section class="wrap">
+  <h2>All 197 countries</h2>
+  <ul class="all">
+  {% for c in countryList %}
+    {% set e = collections.written | entryFor(c.slug) %}
+    <li><a href="/countries/{{ c.slug }}/"{% if e | hasText %} class="live"{% endif %}>{{ c.name }}</a></li>
+  {% endfor %}
+  </ul>
+</section>
+<script>window.COUNTRIES = {{ countryList | mapData(collections.written) | safe }};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.9/datamaps.world.min.js"></script>
+<script src="/js/map.js"></script>

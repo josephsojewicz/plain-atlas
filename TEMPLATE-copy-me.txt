@@ -1,0 +1,29 @@
+HOW TO USE THIS: copy everything below the line into a NEW file named after the country,
+all lowercase, ending in .md (for example: china.md or south-korea.md). The file name must
+match the country's address name exactly (see src/_data/countryList.json, the "slug" value).
+-----------------------------------------------------------------------------------------
+---
+updated: "Nov 19, 2026"
+confidence: "Moderate"
+---
+
+## Bottom line
+
+Your one-paragraph judgment, with the reason for it.
+
+## Key drivers
+
+- **First factor.** One or two sentences.
+- **Second factor.** One or two sentences.
+- **Third factor.** One or two sentences.
+
+## What to watch
+
+- An upcoming event or indicator.
+- Something that would change your mind.
+
+## Update log
+
+### Nov 19, 2026
+
+Your newest update goes at the top of this section. Older updates stay below it.
